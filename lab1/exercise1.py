@@ -10,6 +10,9 @@ playerscores=list(fields)
 ps=[]
 cs=[]
 
+# generates two list of list:
+#   ps = list of [playername, playersocre] one per player
+#   cs = list of [country, playerscore] one per player
 for player in playerscores:
     name=player[0]+" "+player[1]
     country=player[2]
@@ -30,14 +33,14 @@ for player in playerscores:
     ps.append([name,score])
     cs.append([country,score])
 
-
+#sort ps and print podium aka first 3
 print()
 print("podium:")
 ps.sort(key=lambda x:x[1],reverse=True)
 for player in ps[:3]: 
     print(player[0]+": "+str(player[1]))
 
-
+# calc total for each country and print max one
 print()
 print("best country:")
 for cstuple in cs:
