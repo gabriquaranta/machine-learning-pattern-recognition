@@ -37,7 +37,7 @@ def distance2D(x1, y1, x2, y2):
 
 # open file
 with open(
-    "/home/gabri/Polito/ii - Magistrale/0-repos/MachineLearningPatternRecognition/lab1/transports.txt"
+    "lab1/ex2_transports.txt"
 ) as inp:
     inputlines = inp.readlines()  # inputlines list of strings
 
