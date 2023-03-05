@@ -5,7 +5,7 @@ with open(
     filecontent = inputfile.readlines()
 
 # split each string in the list to a list of strings
-fields = map(lambda s: s.split(" "), filecontent)
+fields = (s.split(" ") for s in filecontent)
 
 # list of [player_n player_s country score ...]
 playerscores = list(fields)
