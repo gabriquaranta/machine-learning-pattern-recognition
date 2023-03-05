@@ -16,7 +16,7 @@
 """
 
 #open file
-with open("lab1/ex3_people.txt") as inputfile:
+with open("/home/gabri/Polito/ii - Magistrale/0-repos/MachineLearningPatternRecognition/lab1/ex3_people.txt") as inputfile:
     lines=inputfile.readlines()
 
 #months dict

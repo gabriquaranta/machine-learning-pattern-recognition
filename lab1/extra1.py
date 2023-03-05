@@ -6,7 +6,7 @@ class Book:
         self.loss=0
 
 # open file + read lines
-with open("lab1/ex1xtr_sales.txt") as inputfile:
+with open("/home/gabri/Polito/ii - Magistrale/0-repos/MachineLearningPatternRecognition/lab1/extra1_sales.txt") as inputfile:
     lines=inputfile.readlines()
 
 # "MM/YY" : qty dic

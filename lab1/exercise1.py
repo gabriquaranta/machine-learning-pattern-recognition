@@ -1,6 +1,6 @@
 # open file and read to list of strings
 with open(
-    "lab1/ex1_score.txt"
+    "/home/gabri/Polito/ii - Magistrale/0-repos/MachineLearningPatternRecognition/lab1/ex1_score.txt"
 ) as inputfile:
     filecontent = inputfile.readlines()
 
