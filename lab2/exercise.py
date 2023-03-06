@@ -2,9 +2,62 @@ import numpy as np
 import numpy.ma as ma
 import matplotlib.pyplot as plt
 
-with open(
-    "/home/gabri/Polito/ii - Magistrale/0-repos/MachineLearningPatternRecognition/lab2/iris.csv"
-) as inputfile:
+
+# attributs histogram per attribute per class
+def attributesHists():
+    for i in range(4):
+        plt.figure(i)
+        # matrix[:,i] gets all rows of column i
+        # masks for only value of specific class
+        ms = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
+        mv = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
+        mvv = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
+
+        plt.title(attributes[i] + " (cm)")
+        plt.hist(ms, color="r", alpha=0.4, label="setosa")
+        plt.hist(mv, color="g", alpha=0.4, label="vernicolor")
+        plt.hist(mvv, color="b", alpha=0.4, label="virginica")
+        plt.legend(loc="upper right")
+        plt.savefig("lab2/plots/" + str(i) + "_" + attributes[i])
+        # plt.show()
+
+
+def scatterplots():
+    for i in range(4):  # attribute
+        for j in range(4):  # other attributes
+            if i != j:
+                # attributo i
+                msi = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
+                mvi = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
+                mvvi = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
+                # attributo j
+                msj = ma.masked_where(labels == "Iris-setosa", matrix[:, j])
+                mvj = ma.masked_where(labels == "Iris-versicolor", matrix[:, j])
+                mvvj = ma.masked_where(labels == "Iris-virginica", matrix[:, j])
+
+                plt.figure()
+                plt.title(attributes[i] + "-" + attributes[j] + " (cm)")
+                plt.xlabel(attributes[i])
+                plt.ylabel(attributes[j])
+                plt.scatter(msi, msj, color="r", alpha=0.4, label="setosa")
+                plt.scatter(mvi, mvj, color="g", alpha=0.4, label="vernicolor")
+                plt.scatter(mvvi, mvvj, color="b", alpha=0.4, label="virginica")
+                plt.legend(loc="upper right")
+                plt.savefig(
+                    "lab2/plots/"
+                    + str(i)
+                    + "-"
+                    + str(j)
+                    + "_"
+                    + attributes[i]
+                    + "-"
+                    + attributes[j]
+                )
+                # plt.show()
+
+
+# main
+with open("lab2/iris.csv") as inputfile:
     lines = inputfile.readlines()
 
 # Iris setosa will be indicated with value 0, iris versicolor
@@ -16,10 +69,10 @@ labels = np.empty(
 matrix = np.zeros(shape=(150, 4))
 
 attributes = {
-    0: "sepal length (cm)",
-    1: "sepal width (cm)",
-    2: "petal length (cm)",
-    3: "petal width (cm)",
+    0: "sepal length",
+    1: "sepal width",
+    2: "petal length",
+    3: "petal width",
 }
 
 r = 0
@@ -30,16 +83,6 @@ for line in lines:
     matrix[r] = fields[:4]
     r += 1
 
-# attributo histogram per attribute per class
-for i in range(4):
-    plt.figure(i)
-    # matrix[:,i] gets all rows of column i
-    ms = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
-    mv = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
-    mvv = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
-    plt.title(attributes[i])
-    plt.hist(ms, color="r", alpha=0.4, label="setosa")
-    plt.hist(mv, color="g", alpha=0.4, label="vernicolor")
-    plt.hist(mvv, color="b", alpha=0.4, label="virginica")
-    plt.legend(loc="upper right")
-    plt.show()
+attributesHists()
+
+scatterplots()
