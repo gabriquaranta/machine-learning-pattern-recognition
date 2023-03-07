@@ -23,37 +23,38 @@ def attributesHists():
 
 
 def scatterplots():
+    figure, axis = plt.subplots(4, 4)
+    figure.set_figheight(20)
+    figure.set_figwidth(20)
     for i in range(4):  # attribute
         for j in range(4):  # other attributes
+            # attributo i
+            msi = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
+            mvi = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
+            mvvi = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
+            # attributo j
+            msj = ma.masked_where(labels == "Iris-setosa", matrix[:, j])
+            mvj = ma.masked_where(labels == "Iris-versicolor", matrix[:, j])
+            mvvj = ma.masked_where(labels == "Iris-virginica", matrix[:, j])
             if i != j:
-                # attributo i
-                msi = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
-                mvi = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
-                mvvi = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
-                # attributo j
-                msj = ma.masked_where(labels == "Iris-setosa", matrix[:, j])
-                mvj = ma.masked_where(labels == "Iris-versicolor", matrix[:, j])
-                mvvj = ma.masked_where(labels == "Iris-virginica", matrix[:, j])
+                # plt.figure()
+                axis[i, j]
+                axis[i, j].set_title(attributes[i] + "-" + attributes[j] + " (cm)")
+                axis[i, j].set(xlabel=attributes[i], ylabel=attributes[j])
+                # axis[i, j].xlabel(attributes[i])
+                # axis[i, j].ylabel(attributes[j])
+                axis[i, j].scatter(msi, msj, color="r", alpha=0.4, label="setosa")
+                axis[i, j].scatter(mvi, mvj, color="g", alpha=0.4, label="vernicolor")
+                axis[i, j].scatter(mvvi, mvvj, color="b", alpha=0.4, label="virginica")
+                axis[i, j].legend(loc="upper right")
 
-                plt.figure()
-                plt.title(attributes[i] + "-" + attributes[j] + " (cm)")
-                plt.xlabel(attributes[i])
-                plt.ylabel(attributes[j])
-                plt.scatter(msi, msj, color="r", alpha=0.4, label="setosa")
-                plt.scatter(mvi, mvj, color="g", alpha=0.4, label="vernicolor")
-                plt.scatter(mvvi, mvvj, color="b", alpha=0.4, label="virginica")
-                plt.legend(loc="upper right")
-                plt.savefig(
-                    "lab2/plots/"
-                    + str(i)
-                    + "-"
-                    + str(j)
-                    + "_"
-                    + attributes[i]
-                    + "-"
-                    + attributes[j]
-                )
-                # plt.show()
+            else:
+                axis[i, j].hist(msi, color="r", alpha=0.4, label="setosa")
+                axis[i, j].hist(mvi, color="g", alpha=0.4, label="vernicolor")
+                axis[i, j].hist(mvvi, color="b", alpha=0.4, label="virginica")
+                axis[i, j].legend(loc="upper right")
+    plt.savefig("lab2/plots/attributes_pairplots")
+    # plt.show()
 
 
 # main
