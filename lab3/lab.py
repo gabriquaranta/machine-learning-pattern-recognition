@@ -2,70 +2,59 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def dataCovarianceMatrixLoops(D):
-    # for i in range(4):
-    #     # matrix[:,i] gets all rows of column i
-    #     # masks for only value of specific class
-    #     ms = ma.masked_where(labels == "Iris-setosa", matrix[:, i])
-    #     mv = ma.masked_where(labels == "Iris-versicolor", matrix[:, i])
-    #     mvv = ma.masked_where(labels == "Iris-virginica", matrix[:, i])
-
-    mu = 0
-    for i in range(D.shape[1]):
-        mu = mu + D[:, i : i + 1]
-    mu = mu / float(D.shape[1])
-    C = 0
-    for i in range(D.shape[1]):
-        C = C + np.dot(D[:, i : i + 1] - mu, (D[:, i : i + 1] - mu).T)
-    C = C / float(D.shape[1])
-
-    print(C)
-    return mu, C
-
-
-def dataCovarianceMatrixNPY(D):
-    """The first step to implement PCA therefore
-    requires computing the data covariance matrix
-    C = 1/N  * ∑^N_i=1{ (xi −μ)*(xi −μ)^T }
-    where μ is the dataset mean"""
-
+def PCA(D):
+    # 1. calculate dataset mean mu and covariance matrix
     # mean of each column
     mu = D.mean(0)
 
     # remove mu from all columns
     DC = D - mu
 
+    # calculate covariance matrix
     C = np.dot(DC.transpose(), DC) / float(D.shape[0])
 
-    return mu, C
+    # Since the covariance matrix is semi-definite positive, we can also get the sorted
+    # eigenvectors from the Singular Value Decomposition
+    #     C = UΣV^T
+    # In fact, in this case
+    #     V^T = U^T ,
+    # thus
+    #     UΣV^T = UΣV^T
+    # is also an eigen–decomposition of C.
+    # The SVD can be computed by
+    U, s, Vh = np.linalg.svd(C)
+
+    # the singular values (which are equal to the eigenvalues) are sorted in desc order.
+    # the columns of U are the corresponding eigenvectors.
+    m = 4
+    P = U[:, 0:m]
+
+    # we can apply the projection to a matrix of samples _matrix_ as
+    DP = np.dot(P.T, matrix.T)
+
+    # split for labels
+    DPS = DP[:, labels == 1]
+    DPVE = DP[:, labels == 2]
+    DPVI = DP[:, labels == 3]
+
+    # plot scatters with axes (PC1-PC2)
+    plt.figure()
+    plt.scatter(DPS[0, :], DPS[1, :], label="Setosa")
+    plt.scatter(DPVE[0, :], DPVE[1, :], label="Vernicolor")
+    plt.scatter(DPVI[0, :], DPVI[1, :], label="Virginica")
+    plt.legend()
+    plt.savefig("lab3/PCA.png")
+    plt.show()
 
 
-def eigen(C):
-    """returns the eigenvalues, sorted from smallest to largest, and the corresponding eigenvectors
-    (columns of U)."""
-    s, U = np.linalg.eigh(C)
-    return s, U
-
-
-def scatter(D, labels):
-    print(D)
-    DS = D[:, labels == 1]
-    DVE = D[:, labels == 2]
-    DVI = D[:, labels == 3]
-
-    # plt.figure()
-    # plt.scatter(DS[0:], DS[1:])
-    # plt.scatter(DVI[0:], DVI[1:])
-    # plt.scatter(DVE[0:], DVE[1:])
-    # plt.show()
+def LDA(D):
+    return
 
 
 # MAIN ---------------------------------------------------------------------------------
 with open("lab3/iris.csv") as inputfile:
     lines = inputfile.readlines()
 
-# Iris setosa will be indicated with value 0, iris versicolor
-# with value 1 and iris virginica with value 2.
 labels = np.empty(
     shape=150, dtype=object
 )  # dtype is object for variable length strings
@@ -89,19 +78,5 @@ for line in lines:
     matrix[r] = fields[:4]
     r += 1
 
-# mu, C = dataCovarianceMatrixLoops(matrix)
-mu, C = dataCovarianceMatrixNPY(matrix)
-# print(mu, C)
-
-s, U = eigen(C)
-
-# The m leading eigenvectors can be
-# retrieved from U (here we also reverse the order of the columns of U so that the leading eigenvectors are
-# in the first m columns)
-m = 4
-P = U[:, ::-1][:, 0:m]
-print(P)
-
-DP = np.dot(matrix, P)
-
-scatter(DP, labels)
+PCA(matrix)
+LDA(matrix)
