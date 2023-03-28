@@ -2,10 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def PCA(D):
+def PCA(D, labels):
     # 1. calculate dataset mean mu and covariance matrix
     # mean of each column
     mu = D.mean(0)
+    print(mu)
 
     # remove mu from all columns
     DC = D - mu
@@ -47,7 +48,47 @@ def PCA(D):
     plt.show()
 
 
-def LDA(D):
+def LDA(D, L):
+    # print(D, L)
+    D1 = D[:, L == 1].T
+    D2 = D[:, L == 2].T
+    D3 = D[:, L == 3].T
+
+    mu = D.T.mean(0)
+    mu1 = D1.mean(0)
+    mu2 = D2.mean(0)
+    mu3 = D3.mean(0)
+    # print(mu)
+
+    n1 = len(L[L == 1])
+    n2 = len(L[L == 2])
+    n3 = len(L[L == 3])
+    nc = 3
+    N = len(L)
+
+    DC1 = D1 - mu1
+    DC2 = D2 - mu2
+    DC3 = D3 - mu3
+
+    C1 = np.dot(DC1.T, DC1) / N
+    C2 = np.dot(DC2.T, DC2) / N
+    C3 = np.dot(DC3.T, DC3) / N
+
+    SC = (n1 * C1 + n2 * C2 + n3 * C3) * nc / N
+    print("SC\n", SC)
+
+    m1 = mu1 - mu
+    m2 = mu2 - mu
+    m3 = mu3 - mu
+    print(m1.T)
+
+    mm1 = np.dot(m1.transpose(), m1)
+    mm2 = np.dot(m2.transpose(), m2)
+    mm3 = np.dot(m3.transpose(), m3)
+
+    SB = (n1 * mm1 + n2 * mm2 + n3 * mm3) / N
+    print("SB\n", SB)
+
     return
 
 
@@ -78,5 +119,5 @@ for line in lines:
     matrix[r] = fields[:4]
     r += 1
 
-PCA(matrix)
-LDA(matrix)
+# PCA(matrix, labels)
+LDA(matrix.T, labels)
