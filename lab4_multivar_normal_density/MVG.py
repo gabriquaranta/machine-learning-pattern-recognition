@@ -1,19 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
-
-def vrow(array):
-    """
-    shape 1D np array to row array
-    """
-    return np.reshape(array, (1, np.size(array)))
-
-
-def vcol(array):
-    """
-    shape 1D np array to columnt array
-    """
-    return np.reshape(array, (np.size(array), 1))
+import vrow_vcol as vrvc
 
 
 def logpdf_GAU_ND(X, mu, C):
@@ -46,7 +33,7 @@ plt.figure()
 XPlot = np.linspace(-8, 12, 1000)
 m = np.ones((1, 1)) * 1.0
 C = np.ones((1, 1)) * 2.0
-plt.plot(XPlot.ravel(), np.exp(logpdf_GAU_ND(vrow(XPlot), m, C)))
+plt.plot(XPlot.ravel(), np.exp(logpdf_GAU_ND(vrvc.vrow(XPlot), m, C)))
 # plt.show()
 plt.savefig("lab4_multivar_normal_density/XPlot_MVG.png")
 
