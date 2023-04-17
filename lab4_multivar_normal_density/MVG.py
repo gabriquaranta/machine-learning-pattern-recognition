@@ -34,8 +34,8 @@ XPlot = np.linspace(-8, 12, 1000)
 m = np.ones((1, 1)) * 1.0
 C = np.ones((1, 1)) * 2.0
 plt.plot(XPlot.ravel(), np.exp(logpdf_GAU_ND(vrvc.vrow(XPlot), m, C)))
-# plt.show()
-plt.savefig("lab4_multivar_normal_density/XPlot_MVG.png")
+plt.show()
+# plt.savefig("lab4_multivar_normal_density/XPlot_MVG.png")
 
 # check 1D
 # pdfSol = np.load("lab4_multivar_normal_density/Solution/llGAU.npy")
