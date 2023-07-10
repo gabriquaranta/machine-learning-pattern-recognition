@@ -1,6 +1,43 @@
-from binary_task__optimal_bayes_decision import compute_optimal_bayes_decisions
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+def compute_optimal_bayes_decisions(llr_file, labels_file, prior, cost_fn, cost_fp):
+    """
+    Computes optimal Bayes decisions for different priors and costs based on
+    binary log-likelihood ratios.
+
+    Args:
+        - llr_file (str): Path to the file containing the log-likelihood ratios.
+        - labels_file (str): Path to the file containing the corresponding
+          labels.
+        - prior (float): Prior class probability (π1) for class 1. The prior for
+          class 0 is (1 - prior).
+        - cost_fn (float): Cost of false negative (misclassifying class 1 as
+          class 0).
+        - cost_fp (float): Cost of false positive (misclassifying class 0 as
+          class 1).
+
+    Returns:
+        - tn, fn, fp, tp
+    """
+    # Load log-likelihood ratios and labels
+    llrs = np.load(llr_file)
+    labels = np.load(labels_file)
+
+    # Compute threshold based on prior class probability
+    threshold = np.log(prior / (1 - prior))
+
+    # Apply threshold to log-likelihood ratios
+    decisions = llrs > threshold
+
+    # Compute confusion matrix
+    tp = np.sum(np.logical_and(decisions, labels))
+    tn = np.sum(np.logical_and(np.logical_not(decisions), np.logical_not(labels)))
+    fp = np.sum(np.logical_and(decisions, np.logical_not(labels)))
+    fn = np.sum(np.logical_and(np.logical_not(decisions), labels))
+
+    return tn, fn, fp, tp
 
 
 def compute_bayes_risk(confusion_matrix, prior, cost_fn, cost_fp):
