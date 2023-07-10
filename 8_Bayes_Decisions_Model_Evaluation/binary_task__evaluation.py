@@ -213,9 +213,6 @@ def compute_bayes_error_plot(
           computing the corresponding effective prior, DCF, and minimum DCF.
         - The plot shows the DCF and minimum DCF as a function of prior_log_odds.
     """
-    # Load log-likelihood ratios and labels
-    llrs = np.load(llr_file)
-    labels = np.load(labels_file)
 
     # Compute effective prior for each prior log-odds value
     effective_prior = 1 / (1 + np.exp(-prior_log_odds_range))
