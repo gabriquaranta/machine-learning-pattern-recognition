@@ -114,3 +114,4 @@ print(" Accuracy:", accuracy)
 # Calculate error rate
 error_rate = 1 - accuracy
 print(" Error Rate:", error_rate)
+
