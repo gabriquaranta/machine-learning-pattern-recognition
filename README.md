@@ -1,6 +1,6 @@
 # Machine Learning And Pattern Recognition
 
-!! Check the [Project Report](./GENDER%20CLASSIFICATION%20PROJECT%20REPORT.pdf)
+!! Check the [Project Report](./GENDER%20CLASSIFICATION%20PROJECT%20REPORT.pdf). Score: 8/10
 
 The course aims at providing a solid introduction to **machine learning**, a branch of artificial intelligence that deals with the development of algorithms able to extract knowledge from data, with a focus on pattern recognition and classification problems.
 
