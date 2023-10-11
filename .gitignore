@@ -1,5 +1,4 @@
 .envMLPR
 **.toml
 .ruff_cache
-Gender_Classification_Project
 **.__pycache__

@@ -1,0 +1,28 @@
+Tied Full-Cov
+- with prior = 0.5 -> minDCF = 0.124
+- with prior = 0.5 -> actDCF = 0.126
+- with prior = 0.1 -> minDCF = 0.311
+- with prior = 0.1 -> actDCF = 0.315
+- with prior = 0.9 -> minDCF = 0.335
+- with prior = 0.9 -> actDCF = 0.342
+LogReg(λ = 1e-4, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.124
+- with prior = 0.5 -> actDCF = 0.127
+- with prior = 0.1 -> minDCF = 0.314
+- with prior = 0.1 -> actDCF = 0.318
+- with prior = 0.9 -> minDCF = 0.326
+- with prior = 0.9 -> actDCF = 0.327
+RBF SVM(C = 10, γ = 0.1, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.076
+- with prior = 0.5 -> actDCF = 0.087
+- with prior = 0.1 -> minDCF = 0.225
+- with prior = 0.1 -> actDCF = 0.285
+- with prior = 0.9 -> minDCF = 0.220
+- with prior = 0.9 -> actDCF = 0.231
+GMM Tied (4 components)
+- with prior = 0.5 -> minDCF = 0.061
+- with prior = 0.5 -> actDCF = 0.061
+- with prior = 0.1 -> minDCF = 0.169
+- with prior = 0.1 -> actDCF = 0.180
+- with prior = 0.9 -> minDCF = 0.186
+- with prior = 0.9 -> actDCF = 0.200

@@ -1,0 +1,60 @@
+# # 5-folds
+# RAW
+Tied Full-Cov
+- with prior = 0.5 -> minDCF = 0.110
+- with prior = 0.5 -> actDCF = 0.122
+- with prior = 0.1 -> minDCF = 0.299
+- with prior = 0.1 -> actDCF = 0.301
+- with prior = 0.9 -> minDCF = 0.339
+- with prior = 0.9 -> actDCF = 0.372
+LogReg(λ = 1e-4, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.112
+- with prior = 0.5 -> actDCF = 0.122
+- with prior = 0.1 -> minDCF = 0.284
+- with prior = 0.1 -> actDCF = 0.289
+- with prior = 0.9 -> minDCF = 0.348
+- with prior = 0.9 -> actDCF = 0.365
+RBF SVM(C = 10, γ = 0.1, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.094
+- with prior = 0.5 -> actDCF = 0.107
+- with prior = 0.1 -> minDCF = 0.251
+- with prior = 0.1 -> actDCF = 0.352
+- with prior = 0.9 -> minDCF = 0.288
+- with prior = 0.9 -> actDCF = 0.306
+GMM Tied (4 components)
+- with prior = 0.5 -> minDCF = 0.067
+- with prior = 0.5 -> actDCF = 0.072
+- with prior = 0.1 -> minDCF = 0.236
+- with prior = 0.1 -> actDCF = 0.236
+- with prior = 0.9 -> minDCF = 0.220
+- with prior = 0.9 -> actDCF = 0.224
+
+# PCA m = 11
+Tied Full-Cov
+- with prior = 0.5 -> minDCF = 0.119
+- with prior = 0.5 -> actDCF = 0.120
+- with prior = 0.1 -> minDCF = 0.303
+- with prior = 0.1 -> actDCF = 0.318
+- with prior = 0.9 -> minDCF = 0.355
+- with prior = 0.9 -> actDCF = 0.369
+LogReg(λ = 1e-4, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.121
+- with prior = 0.5 -> actDCF = 0.122
+- with prior = 0.1 -> minDCF = 0.306
+- with prior = 0.1 -> actDCF = 0.317
+- with prior = 0.9 -> minDCF = 0.353
+- with prior = 0.9 -> actDCF = 0.382
+RBF SVM(C = 10, γ = 0.1, πT = 0.5)
+- with prior = 0.5 -> minDCF = 0.095
+- with prior = 0.5 -> actDCF = 0.106
+- with prior = 0.1 -> minDCF = 0.264
+- with prior = 0.1 -> actDCF = 0.358
+- with prior = 0.9 -> minDCF = 0.281
+- with prior = 0.9 -> actDCF = 0.289
+GMM Tied (4 components)
+- with prior = 0.5 -> minDCF = 0.070
+- with prior = 0.5 -> actDCF = 0.072
+- with prior = 0.1 -> minDCF = 0.206
+- with prior = 0.1 -> actDCF = 0.255
+- with prior = 0.9 -> minDCF = 0.228
+- with prior = 0.9 -> actDCF = 0.244

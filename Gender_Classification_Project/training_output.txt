@@ -1,0 +1,218 @@
+Gaussian Classifiers Training:
+# # 5-folds
+# RAW
+ # Prior = 0.5
+  Full-Cov -> 0.113
+  Diag-Cov -> 0.463
+  Tied FC ->  0.109
+  Tied DC ->  0.457
+ # Prior = 0.1
+  Full-Cov -> 0.297
+  Diag-Cov -> 0.771
+  Tied FC ->  0.299
+  Tied DC ->  0.770
+ # Prior = 0.9
+  Full-Cov -> 0.350
+  Diag-Cov -> 0.777
+  Tied FC ->  0.342
+  Tied DC ->  0.781
+# PCA m = 11
+ # Prior = 0.5
+  Full-Cov -> 0.122
+  Diag-Cov -> 0.124
+  Tied FC ->  0.118
+  Tied DC ->  0.123
+ # Prior = 0.1
+  Full-Cov -> 0.312
+  Diag-Cov -> 0.312
+  Tied FC ->  0.299
+  Tied DC ->  0.294
+ # Prior = 0.9
+  Full-Cov -> 0.358
+  Diag-Cov -> 0.349
+  Tied FC ->  0.356
+  Tied DC ->  0.355
+# PCA m = 10
+ # Prior = 0.5
+  Full-Cov -> 0.187
+  Diag-Cov -> 0.184
+  Tied FC ->  0.183
+  Tied DC ->  0.179
+ # Prior = 0.1
+  Full-Cov -> 0.407
+  Diag-Cov -> 0.435
+  Tied FC ->  0.428
+  Tied DC ->  0.421
+ # Prior = 0.9
+  Full-Cov -> 0.538
+  Diag-Cov -> 0.546
+  Tied FC ->  0.535
+  Tied DC ->  0.543
+# PCA m = 9
+ # Prior = 0.5
+  Full-Cov -> 0.220
+  Diag-Cov -> 0.208
+  Tied FC ->  0.212
+  Tied DC ->  0.210
+ # Prior = 0.1
+  Full-Cov -> 0.500
+  Diag-Cov -> 0.486
+  Tied FC ->  0.476
+  Tied DC ->  0.482
+ # Prior = 0.9
+  Full-Cov -> 0.578
+  Diag-Cov -> 0.597
+  Tied FC ->  0.577
+  Tied DC ->  0.589
+
+
+
+Logistic Regression report:
+# # 5-folds
+# RAW
+ # Prior = 0.5
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.112
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.123
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.112
+ # Prior = 0.1
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.283
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.296
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.316
+ # Prior = 0.9
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.349
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.371
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.344
+# PCA m = 11
+ # Prior = 0.5
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.121
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.127
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.115
+ # Prior = 0.1
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.305
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.302
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.315
+ # Prior = 0.9
+  LR(λ = 1.00e-04, πT = 0.5) -> 0.354
+  LR(λ = 1.00e-04, πT = 0.1) -> 0.373
+  LR(λ = 1.00e-04, πT = 0.9) -> 0.353
+
+
+
+Support Vector Machine report:
+# # 5-folds
+# RAW
+ # Prior = 0.5
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.117
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.128
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.112
+ # Prior = 0.1
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.286
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.308
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.318
+ # Prior = 0.9
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.353
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.379
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.334
+# PCA m = 11
+ # Prior = 0.5
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.120
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.132
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.122
+ # Prior = 0.1
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.304
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.310
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.333
+ # Prior = 0.9
+  Linear SVM(C = 1, πT = 0.5) -> minDCF = 0.350
+  Linear SVM(C = 1, πT = 0.1) -> minDCF = 0.382
+  Linear SVM(C = 1, πT = 0.9) -> minDCF = 0.354
+
+
+
+RBF SVM, Poly SVM report:
+# # 5-folds POLY
+# RAW
+ # Prior = 0.5
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.128
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.143
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.139
+ # Prior = 0.1
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.317
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.365
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.404
+ # Prior = 0.9
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.348
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.444
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.317
+# PCA m = 11
+ # Prior = 0.5
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.127
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.157
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.133
+ # Prior = 0.1
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.338
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.385
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.407
+ # Prior = 0.9
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.5) -> minDCF = 0.340
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.1) -> minDCF = 0.446
+  Poly SVM(C = 0.1, c = 1, d = 2, πT = 0.9) -> minDCF = 0.330
+
+# # 5-folds RBF
+# RAW
+ # Prior = 0.5
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.095
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.115
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.110
+ # Prior = 0.1
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.275
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.279
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.338
+ # Prior = 0.9
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.284
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.367
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.262
+# PCA m = 11
+ # Prior = 0.5
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.095
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.115
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.110
+ # Prior = 0.1
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.275
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.279
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.338
+ # Prior = 0.9
+  RBF SVM(C = 10, γ = 0.1, πT = 0.5) -> minDCF = 0.284
+  RBF SVM(C = 10, γ = 0.1, πT = 0.1) -> minDCF = 0.367
+  RBF SVM(C = 10, γ = 0.1, πT = 0.9) -> minDCF = 0.262
+
+
+
+GMM report:
+# # 5-folds
+# RAW
+ # Prior = 0.5
+  GMM Full (4 components)  -> minDCF = 0.071
+  GMM Diag (16 components) -> minDCF = 0.197
+  GMM Tied (4 components) -> minDCF = 0.068
+ # Prior = 0.1
+  GMM Full (4 components)  -> minDCF = 0.201
+  GMM Diag (16 components) -> minDCF = 0.501
+  GMM Tied (4 components) -> minDCF = 0.237
+ # Prior = 0.9
+  GMM Full (4 components)  -> minDCF = 0.204
+  GMM Diag (16 components) -> minDCF = 0.474
+  GMM Tied (4 components) -> minDCF = 0.222
+# PCA m = 11
+ # Prior = 0.5
+  GMM Full (4 components)  -> minDCF = 0.069
+  GMM Diag (16 components) -> minDCF = 0.137
+  GMM Tied (4 components) -> minDCF = 0.070
+ # Prior = 0.1
+  GMM Full (4 components)  -> minDCF = 0.207
+  GMM Diag (16 components) -> minDCF = 0.389
+  GMM Tied (4 components) -> minDCF = 0.202
+ # Prior = 0.9
+  GMM Full (4 components)  -> minDCF = 0.194
+  GMM Diag (16 components) -> minDCF = 0.346
+  GMM Tied (4 components) -> minDCF = 0.229
