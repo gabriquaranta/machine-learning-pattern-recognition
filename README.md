@@ -1,5 +1,7 @@
 # Machine Learning And Pattern Recognition
 
+!! Check the [Project Report](./GENDER%20CLASSIFICATION%20PROJECT%20REPORT.pdf)
+
 The course aims at providing a solid introduction to **machine learning**, a branch of artificial intelligence that deals with the development of algorithms able to extract knowledge from data, with a focus on pattern recognition and classification problems.
 
 The course will cover the basic concepts of statistical machine learning and will concentrate on the broad class of **generative linear Gaussian models** and **discriminative classifiers based on logistic regression** and **support vector machines**.
